@@ -1,0 +1,72 @@
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #1d2129;
+  --muted: #5f6672;
+  --line: #d5dae3;
+  --blue: #0051f9;
+  --dark: #282c34;
+  --yellow: #fed802;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+code { font-family: ui-monospace, Menlo, monospace; background: #eef1f6; padding: 1px 5px; border-radius: 4px; }
+
+.taller { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+@media (max-width: 720px) { .taller { grid-template-columns: 1fr; } }
+
+aside { background: var(--dark); color: #fff; padding: 20px 16px; border-right: 4px solid var(--blue); }
+aside h1 { font-size: 20px; margin: 0 0 16px; }
+aside ol { list-style: none; padding: 0; margin: 0; }
+aside li button {
+  width: 100%; text-align: left; font: inherit; color: #d6dae1; background: transparent;
+  border: 0; border-radius: 8px; padding: 8px 10px; cursor: pointer;
+}
+aside li button:hover { background: #353a43; }
+aside li button.active { background: var(--blue); color: #fff; }
+.leyenda { color: #aeb4bf; font-size: 14px; margin-top: 24px; line-height: 1.6; }
+
+main { padding: 24px; max-width: 760px; }
+main header h2 { margin: 0 0 6px; }
+main header p { margin: 4px 0; }
+.muted { color: var(--muted); }
+
+.switch { display: inline-flex; margin: 12px 0 16px; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+.switch button { font: inherit; border: 0; background: var(--surface); padding: 6px 14px; cursor: pointer; color: var(--ink); }
+.switch button.active { background: var(--dark); color: var(--yellow); }
+
+.resultado { background: var(--surface); border: 2px solid var(--line); border-radius: 12px; padding: 20px; }
+.resultado.es-solucion { border-color: var(--yellow); }
+
+/* estilos que usan los ejercicios */
+.resultado button {
+  font: inherit; background: var(--blue); color: #fff; border: 0; border-radius: 8px;
+  padding: 8px 14px; cursor: pointer;
+}
+.resultado button:disabled { background: #aab3c2; cursor: not-allowed; }
+.resultado button.big { font-size: 28px; padding: 12px 22px; }
+.resultado input { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; min-width: 240px; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.card { max-width: 340px; }
+.card img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; }
+.card h3 { margin: 10px 0 6px; }
+.card p { line-height: 1.5; }
+.list { list-style: none; padding: 0; }
+.list li { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.list img { width: 40px; height: 40px; object-fit: cover; border-radius: 6px; }
+.tablero { display: grid; grid-template-columns: repeat(4, 70px); gap: 10px; }
+.carta.carta { width: 70px; height: 70px; padding: 0; border-radius: 10px; }
+
+.tiempo { font-size: 40px; font-weight: 700; margin: 0 0 12px; }
+.error { color: #c5221f; font-weight: 600; }
+.resultado form { margin-bottom: 12px; }
+.resultado audio { width: 100%; margin-top: 12px; }
+.lista-canciones { list-style: none; padding: 0; margin: 0; }
+.lista-canciones li { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.lista-canciones img { width: 48px; height: 48px; border-radius: 6px; }
+.lista-canciones .info { flex: 1; }
+.lista-canciones small { display: block; color: var(--muted); }
